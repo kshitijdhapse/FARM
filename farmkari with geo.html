@@ -84,13 +84,17 @@
             
             <p>Latitude: <span id="latitude"></span></p>
             <p>Longitude: <span id="longitude"></span></p>
-            <h2 id="temperature"></h2>
-            <h2 id="humidity"></h2>
+            <p>Temperature: <span id="temperature"></span></p>
+            <p>Humidity: <span id="humidity"></span></p>
+
+            <!-- <h2>Temperature : </h2><h2 id="temperature"></h2>
+            <h2>Humidity : </h2><h2 id="humidity"></h2> -->
             
             <button type="submit">Predict Crop</button>
         </form>
         <div id="result"></div>
     </div>
+
     <script>
         let temperature = null; // Declare temperature and humidity variables
         let humidity = null;
@@ -140,7 +144,7 @@
                 rain: parseFloat(formData.get("rain")),
             };
     
-            fetch("http://localhost:4000/predict", {
+            fetch("http://127.0.0.1:8000/predict", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -166,7 +170,6 @@
             });
         });
     </script>
-    
     
 </body>
 </html>
